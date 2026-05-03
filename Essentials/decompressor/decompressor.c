@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "../compressor/compressor.h"
+#include "../string/string.h"
 
 long fileSize(const char *filename) {
     FILE *file = fopen(filename, "rb");
@@ -75,7 +75,7 @@ void decompressSHF(const char *inputFile, const char *outputFile) {
         currentCode[codeLen] = '\0';
 
         for (int i = 0; i < count; ++i) {
-            if (strcmp(currentCode, symbols[i].code) == 0) {
+            if (c_strcmp(currentCode, symbols[i].code) == 0) {
                 fputc(symbols[i].ch, out);
                 bytesWritten++;
 

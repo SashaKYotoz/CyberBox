@@ -10,4 +10,6 @@ add_executable(Essentials main.c
         compressor/compressor.h
         decompressor/decompressor.c
         decompressor/decompressor.h
+        string/string.c
+        string/string.h
 )
